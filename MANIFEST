@@ -1,0 +1,3 @@
+lib/App/GitHooks/Plugin/PgBouncerAuthSyntax.pm
+t/00-load.t
+t/10-run.t
