@@ -107,7 +107,7 @@ sub run_pre_commit_file
 	croak '"comments_setting" needs to be defined in the [PgBouncerAuthSyntax] section of your .githooksrc file'
 		if !defined( $comments_setting ) || ( $comments_setting eq '' );
 	croak 'The value of "comments_setting" in the [PgBouncerAuthSyntax] section of your .githooksrc file is not valid'
-		if $comments_setting !~ /^(?:allow_anywhere|allow_end_only|disallow)$/;
+		if $comments_setting !~ /^(?:allow_anywhere|allow_end_only|disallow)$/x;
 
 	# Retrieve lines.
 	my @lines = File::Slurp::read_file( $repository->work_tree() . '/' . $file );
