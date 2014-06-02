@@ -37,6 +37,61 @@ Version 1.0.0
 our $VERSION = '1.0.0';
 
 
+=head1 CONFIGURATION OPTIONS
+
+This plugin supports the following options in the C<[PgBouncerAuthSyntax]>
+section of your C<.githooksrc> file.
+
+	[PgBouncerAuthSyntax]
+	file_pattern = /^configs\/pgbouncer\/userlist.txt$/
+	comments_setting = disallow
+
+
+=head2 file_pattern
+
+A regular expression that will be checked against the path of files that are
+committed and that indicates a PgBouncer auth file to analyze when it matches.
+
+	file_pattern = /^configs\/pgbouncer\/userlist.txt$/
+
+
+=head2 comments_setting
+
+As of version 1.5.4, PgBouncer does not allow comments. This will however
+change in the next release, thanks to
+L<this patch|https://github.com/markokr/pgbouncer-dev/commit/995acda16ce30cde67ab1839387138b7545ff786>.
+
+Configure this setting accordingly based on your PgBouncer version:
+
+=over 4
+
+=item * I<allow_anywhere>
+
+Allow comments anywhere. Use with PgBouncer versions above 1.5.4 (not
+included).
+
+	comments_setting = allow_anywhere
+
+=item * I<allow_end_only>
+
+Allow comments at the end of the file only. PgBouncer will stop parsing the
+auth file as soon as it encounters an incorrectly formatted line, so you can
+technically add comments at the end of the file. This setting will prevent you
+from accidentally adding anything but comments once the first comment is seen,
+to catch errors that are otherwise tricky to debug.
+
+	comments_setting = allow_end_only
+
+=item * I<disallow>
+
+Don't allow comments at all. The safest setting for PgBouncer versions up to
+1.5.4 (included).
+
+	comments_setting = disallow
+
+=back
+
+
 =head1 METHODS
 
 =head2 get_file_pattern()
