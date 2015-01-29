@@ -3,6 +3,7 @@ App-GitHooks-Plugin-PgBouncerAuthSyntax
 
 [![Build Status](https://travis-ci.org/guillaumeaubert/App-GitHooks-Plugin-PgBouncerAuthSyntax.svg?branch=master)](https://travis-ci.org/guillaumeaubert/App-GitHooks-Plugin-PgBouncerAuthSyntax)
 [![Coverage Status](https://coveralls.io/repos/guillaumeaubert/App-GitHooks-Plugin-PgBouncerAuthSyntax/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/App-GitHooks-Plugin-PgBouncerAuthSyntax?branch=master)
+[![Latest Version](https://img.shields.io/github/tag/guillaumeaubert/App-GitHooks-Plugin-PgBouncerAuthSyntax.svg?style=flat)](https://metacpan.org/release/App-GitHooks-Plugin-PgBouncerAuthSyntax)
 
 App::GitHooks plugin to verify that the syntax of PgBouncer auth files is
 correct.
