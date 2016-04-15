@@ -3,24 +3,24 @@ require 5.010;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'NAME' => 'App::GitHooks::Plugin::PgBouncerAuthSyntax',
   'VERSION_FROM' => 'lib/App/GitHooks/Plugin/PgBouncerAuthSyntax.pm',
-  'PREREQ_PM' => {
-                   'App::GitHooks' => 0,
-                   'Capture::Tiny' => 0,
-                   'Carp' => 0,
-                   'File::Slurp' => 0,
-                   'Git::Repository' => 0,
-                   'Test::Exception' => 0,
-                   'Test::FailWarnings' => 0,
-                   'Test::Requires::Git' => 1.005,
-                   'Test::More' => '0.94'
-                 },
-  'INSTALLDIRS' => 'site',
-  'EXE_FILES' => [],
-  'PL_FILES' => {},
   'test' => {
               'TESTS' => 't/*.t'
-            }
+            },
+  'PREREQ_PM' => {
+                   'Test::Requires::Git' => '1.005',
+                   'Test::FailWarnings' => 0,
+                   'Carp' => 0,
+                   'Git::Repository' => 0,
+                   'Capture::Tiny' => 0,
+                   'App::GitHooks' => 0,
+                   'Test::Exception' => 0,
+                   'File::Slurp' => 0,
+                   'Test::More' => '0.94'
+                 },
+  'EXE_FILES' => [],
+  'INSTALLDIRS' => 'site',
+  'NAME' => 'App::GitHooks::Plugin::PgBouncerAuthSyntax',
+  'PL_FILES' => {}
 )
 ;
